@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 
-namespace nothinbutdotnetprep.tests.utility
+namespace nothinbutdotnetprep.specs.utility
 {
-    public static class CollectionExtensions
+  public static class CollectionExtensions
+  {
+    public static void add_all<T>(this IList<T> list, params T[] Items)
     {
-        public static void add_all<T>(this IList<T> list, params T[] Items)
-        {
-            foreach (var t in Items) list.Add(t);
-        }
+      foreach (var t in Items) list.Add(t);
     }
+  }
 }
