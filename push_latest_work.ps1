@@ -1,10 +1,6 @@
-$status = git status
+. .\psh_git_utils.ps1
 
-if ($status[0].endswith("master"))
-{
-  "You need to run this on a non master branch"
-  exit
-}
+exit_if_on_the_master_branch
 
 git add -A
 git commit -m "Pushing new changes"
