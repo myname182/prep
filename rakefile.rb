@@ -3,6 +3,7 @@ require 'rake/clean'
 require 'fileutils'
 require 'erb'
 require 'configatron'
+require 'albacore'
 
 include Rake::DSL
 
@@ -58,26 +59,14 @@ task :init  => :clean do
   end
 end
 
-
 namespace :build do
   desc 'compiles the project'
-  task :compile => :init do
-    opts = {
-        :version => 'v4\Full',
-        :switches => { :verbosity => :minimal, :target => :Build },
-        :properties => {
-          :Configuration => configatron.target,
-          :TrackFileAccess => false,
-          :PostBuildEvent => ""
-        }
-      }
 
-      @project_files.each do |project|
-        MSBuildRunner.build opts.merge({ :project => project }), 
-        { 
-            :OutputPath => configatron.artifacts_dir.to_absolute 
-        }
-      end
+  csc :compile => :init do|csc| 
+    csc.compile FileList["source/**/*.cs"].exclude("AssemblyInfo.cs")
+    csc.references configatron.all_references
+    csc.output = File.join(configatron.artifacts_dir,"#{configatron.project}.specs.dll")
+    csc.target = :library
   end
 
   task :rebuild => ["clean","compile"]
