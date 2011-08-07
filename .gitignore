@@ -21,3 +21,4 @@ _UpgradeReport_Files
 git.yaml
 Gemfile.lock
 *mm_cache*
+db_dev.rb
