@@ -4,6 +4,8 @@ require 'fileutils'
 require 'erb'
 require 'configatron'
 
+include Rake::DSL
+
 =begin Supplementary Build Files
 
 build\utils - build utilities
