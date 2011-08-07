@@ -52,6 +52,7 @@
   <ItemGroup>
     <None Include="build.bat" />
     <None Include="build\tasks\configuration.rb" />
+    <None Include="build\tasks\git.rb" />
     <None Include="build\tasks\machine_specs.rb" />
     <None Include="build\tasks\templates.rb" />
     <None Include="build\tools\Rake\bin\rake" />

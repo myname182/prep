@@ -19,3 +19,4 @@ UpgradeLog.XML
 _UpgradeReport_Files
 git.yaml
 Gemfile.lock
+*mm_cache*

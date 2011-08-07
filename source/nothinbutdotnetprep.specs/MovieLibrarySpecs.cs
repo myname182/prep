@@ -8,9 +8,9 @@ using nothinbutdotnetprep.specs.utility;
 using System.Linq;
 
 /* The following set of Context/Specification pairs are in place to specify the functionality that you need to complete for the MovieLibrary class.
- * MovieLibrary is an aggregate root for the Movie class. it exposes the ability to search,sort, and iterate over all of the movies that it aggregates.
- * The current implementation of MovieLibrary has all of its methods throwing a NotImplementedException. Your job is to get all of the Contexts and their
- * accompanying specifications passing
+ * MovieLibrary is an collection of Movie. It exposes the ability to search,sort, and iterate over all of the movies that it contains.
+ * The current implementation of MovieLibrary has almost all of its methods throwing a NotImplementedException. Your job is to get all of the Contexts and their
+ * accompanying specifications [tests] passing
  * 
  * This exercise will give you an opportunity to get some familiarity with the following contracts:
  * 
