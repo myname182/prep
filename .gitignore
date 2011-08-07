@@ -18,3 +18,4 @@ artifacts
 UpgradeLog.XML
 _UpgradeReport_Files
 git.yaml
+Gemfile.lock
