@@ -3,6 +3,11 @@ def delayed
     yield
   end
 end
+
+def missing(configuration_item_name,file)
+  raise "You need to provide a value for #{configuration_item_name} in the file #{file}"
+end
+
 def dynamic
   Configatron::Dynamic.new do
     yield
