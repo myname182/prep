@@ -1,14 +1,14 @@
 config = 
 {
-  :course_name => missing("coure_name",__FILE__),
-  :project => "nothinbutdotnetprep",
+  :course_name => missing("course_name",__FILE__),
+  :project => missing("project",__FILE),
   :target => "Debug",
   :source_dir => "source",
   :repo_name => missing("repo_name",__FILE__),
   :artifacts_dir => "artifacts",
   :config_dir => "source/config",
-  :app_dir => "source/nothinbutdotnetprep",
-  :log_file_name => "nbdn_prep.txt",
+  :app_dir => delayed{"source/#{configatron.project}"},
+  :log_file_name => delayed{"#{configatron.project}_log.txt"},
   :log_level => "DEBUG"
 }
 configatron.configure_from_hash config

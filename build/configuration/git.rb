@@ -1,7 +1,7 @@
 configs ={
   :git => {
-    :remotes => %w[someone someoneelse jp test],
-    :repo => "shawaugp"
+    :remotes => missing("remotes",__FILE__),
+    :repo => missing("repo",__FILE__)
   }
 }
 configatron.configure_from_hash(configs)
