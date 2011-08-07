@@ -1,6 +1,6 @@
 configs ={
   :git => {
-    :remotes => %w[someone],
+    :remotes => %w[someone someoneelse jp test],
     :repo => "shawaugp"
   }
 }
