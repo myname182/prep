@@ -1,6 +1,6 @@
 config = 
 {
-  :course_name => "Develop With Passion - .Net Developer Bootcamp",
+  :course_name => missing('course_name',__FILE__),
   :project => "nothinbutdotnetprep",
   :target => "Debug",
   :source_dir =>"source",
