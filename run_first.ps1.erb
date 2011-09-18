@@ -7,7 +7,7 @@ function install_utilities()
 function configure_remote()
 {
   `git remote rm jp`
-  `git remote add jp git://github.com/#{configatron.git.user}/#{configatron.git.repo}.git`
+  `git remote add jp git://github.com/<%= configatron.git.user %>/<%= configatron.git.repo %>.git`
 end
 }
 
