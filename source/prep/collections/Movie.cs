@@ -1,6 +1,6 @@
 using System;
 
-namespace nothinbutdotnetprep.collections
+namespace prep.collections
 {
   public class Movie
   {

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using Machine.Specifications;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
-using nothinbutdotnetprep.collections;
-using nothinbutdotnetprep.specs.utility;
+using prep.collections;
+using prep.specs.utility;
 using System.Linq;
 
 /* The following set of Context/Specification pairs are in place to specify the functionality that you need to complete for the MovieLibrary class.
@@ -55,7 +55,7 @@ using System.Linq;
  * Develop With Passion®!!
  */
 
-namespace nothinbutdotnetprep.specs
+namespace prep.specs
 {
     public class MovieLibrarySpecs
     {

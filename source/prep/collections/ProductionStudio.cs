@@ -1,4 +1,4 @@
-namespace nothinbutdotnetprep.collections
+namespace prep.collections
 {
   public class ProductionStudio
   {

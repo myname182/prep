@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace nothinbutdotnetprep.collections
+namespace prep.collections
 {
     public class MovieLibrary
     {

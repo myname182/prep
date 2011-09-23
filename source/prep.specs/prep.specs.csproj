@@ -8,8 +8,8 @@
     <ProjectGuid>{EF77F62B-1CC6-4C03-8198-26DB2D24EE75}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>nothinbutdotnetprep.specs</RootNamespace>
-    <AssemblyName>nothinbutdotnetprep.specs</AssemblyName>
+    <RootNamespace>prep.specs</RootNamespace>
+    <AssemblyName>prep.specs</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -79,9 +79,9 @@
     <Compile Include="utility\CollectionExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\nothinbutdotnetprep\nothinbutdotnetprep.csproj">
+    <ProjectReference Include="..\prep\prep.csproj">
       <Project>{286C7067-D921-4B26-8CFA-9F9B795FD4E1}</Project>
-      <Name>nothinbutdotnetprep</Name>
+      <Name>prep</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

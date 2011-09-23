@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace nothinbutdotnetprep.specs.utility
+namespace prep.specs.utility
 {
   public static class CollectionExtensions
   {
