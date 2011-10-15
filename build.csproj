@@ -158,10 +158,13 @@
     <None Include="build\utils\string.rb" />
     <None Include="build\utils\template_file.rb" />
     <None Include="fetch_latest" />
+    <None Include="Gemfile" />
+    <None Include="git_utils.rb" />
     <None Include="push" />
-    <None Include="push_latest_work.ps1" />
     <None Include="rakefile.rb" />
-    <None Include="start_new_exercise.ps1" />
+    <None Include="run_first" />
+    <None Include="save_my_changes" />
+    <None Include="start_new_exercise" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
