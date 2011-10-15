@@ -1,6 +1,6 @@
 configs ={
   :git => {
-    :user => 'sdfsf',
+    :user => missing("user",__FILE__),
     :remotes => potentially_change("remotes",__FILE__),
     :repo => 'prep' 
   }
