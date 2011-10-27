@@ -57,6 +57,7 @@ using prep.specs.utility;
 
 namespace prep.specs
 {
+  [Subject(typeof(MovieLibrary))]
   public class MovieLibrarySpecs
   {
     public abstract class movie_library_concern : Observes<MovieLibrary>
@@ -70,7 +71,6 @@ namespace prep.specs
       };
     };
 
-    [Subject(typeof(MovieLibrary))]
     public class when_counting_the_number_of_movies : movie_library_concern
     {
       static int number_of_movies;
@@ -87,7 +87,6 @@ namespace prep.specs
       };
     }
 
-    [Subject(typeof(MovieLibrary))]
     public class when_asked_for_all_of_the_movies : movie_library_concern
     {
       static Movie first_movie;
@@ -109,7 +108,6 @@ namespace prep.specs
         all_movies.ShouldContainOnly(first_movie, second_movie);
     }
 
-    [Subject(typeof(MovieLibrary))]
     public class when_trying_to_change_the_set_of_movies_returned_by_the_movie_library_to_a_mutable_type :
       movie_library_concern
     {
@@ -130,7 +128,6 @@ namespace prep.specs
         spec.exception_thrown.ShouldBeAn<InvalidCastException>();
     }
 
-    [Subject(typeof(MovieLibrary))]
     public class when_adding_a_movie_to_the_library : movie_library_concern
     {
       static Movie movie;
@@ -147,7 +144,6 @@ namespace prep.specs
       };
     }
 
-    [Subject(typeof(MovieLibrary))]
     public class when_adding_an_existing_movie_in_the_collection_again : movie_library_concern
     {
       static Movie movie;
@@ -165,7 +161,6 @@ namespace prep.specs
         movie_collection.Count.ShouldEqual(1);
     }
 
-    [Subject(typeof(MovieLibrary))]
     public class when_adding_two_different_copies_of_the_same_movie : movie_library_concern
     {
       static Movie another_copy_of_speed_racer;
@@ -185,7 +180,6 @@ namespace prep.specs
         movie_collection.Count.ShouldEqual(1);
     }
 
-    [Subject(typeof(MovieLibrary))]
     public class when_searching_for_movies : concern_for_searching_and_sorting
     {
       /* Look at the potential method explosion that can start to occur as you start to search on different criteria
@@ -243,7 +237,6 @@ namespace prep.specs
       };
     }
 
-    [Subject(typeof(MovieLibrary))]
     public class when_sorting_movies : concern_for_searching_and_sorting
     {
       /* Look at the potential method explosion that can start to occur as you start to sort on different criteria
