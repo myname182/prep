@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-class FileItem
+class ChangedFile
   attr_accessor :name,:last_changed_time
 
   def initialize(name)
@@ -31,13 +31,27 @@ class ChangeResult
   end
 end
 
+class BuildMessage
+  def initialize(error_items)
+    @error_items = error_items
+  end
+
+  def successful
+    @error_items.length == 0
+  end
+
+  def message
+    successful ? "Build Successful" : @error_items.join('\n')
+  end
+end
+
 
 def populate_files(all_files)
   result = ChangeResult.new
   Dir.glob("**/*.cs").each do|file|
     unless (all_files.key?(file))
       result.flag_changes
-      all_files[file] = FileItem.new(file)
+      all_files[file] = ChangedFile.new(file)
     end
   end
   result
@@ -79,12 +93,15 @@ def get_errors_in(output)
   output.split("\n").select{|item| error_pattern =~ item}
 end
 
+def notify(build_message)
+  icon = build_message.successful ? "green" : "red"
+  `build/tools/growl/growlnotify.exe /t:"Build" /i:".\\#{icon}.jpg" "#{build_message.message.gsub("\n","\r\n")}"`
+end
 
 def monitor(all_files)
   if (update_files(all_files) | files_have_changed(all_files))
     errors = get_errors_in(`rake specs:run`)
-    message = (errors.length == 0 ? "Build Successful" : errors.join('\n'))
-    `growlnotify "#{message}"`
+    notify(BuildMessage.new(errors))
   end
 end
 
