@@ -77,7 +77,7 @@ end
 
 def notify(build_message)
   icon = build_message.successful ? "green" : "red"
-  args = {:t => "Build",:i => ".\\#{icon}.jpg",:s => "False"}
+  args = {:t => "Build",:i => ".\\#{icon}.jpg"}
   command_line = "build/tools/growl/growlnotify.exe"
   args.each {|key,value| command_line += " /#{key}:\"#{value}\""}
   `#{command_line} "#{build_message.message}"`
