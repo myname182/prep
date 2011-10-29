@@ -24,13 +24,6 @@ end
 
 all_files ={}
 
-class ChangeResult
-  attr_accessor :changes,:files
-  def flag_changes
-    @changes = true
-  end
-end
-
 class BuildMessage
   def initialize(error_items)
     @error_items = error_items
@@ -47,36 +40,34 @@ end
 
 
 def populate_files(all_files)
-  result = ChangeResult.new
+  files_have_changed = false
   Dir.glob("**/*.cs").each do|file|
     unless (all_files.key?(file))
-      result.flag_changes
+      files_have_changed = true
       all_files[file] = ChangedFile.new(file)
     end
   end
-  result
+  files_have_changed
 end
 
 def remove_all_deleted(all_files)
-  result = ChangeResult.new
+  files_have_changed = false
   remove = {}
   all_files.each do |path,file|
     if (file.was_deleted?)
       remove[path] = file if file.was_deleted?
-      result.flag_changes
+      files_have_changed = true
     end
   end
   remove.each do|path,file|
     all_files.delete(path)
   end
-  result
+  files_have_changed
 end
 
-def update_files(all_files)
-  result = populate_files(all_files)
-  result2 = remove_all_deleted(all_files)
-
-  return result2.changes | result.changes
+def changes_have_occured_in(all_files)
+  return populate_files(all_files) | remove_all_deleted(all_files) |
+    files_have_changed(all_files)
 end
 
 def files_have_changed(all_files)
@@ -99,7 +90,7 @@ def notify(build_message)
 end
 
 def monitor(all_files)
-  if (update_files(all_files) | files_have_changed(all_files))
+  if (changes_have_occured_in(all_files))
     errors = get_errors_in(`rake specs:run`)
     notify(BuildMessage.new(errors))
   end
