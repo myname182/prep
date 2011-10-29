@@ -8,7 +8,6 @@ class ChangedFile
   def initialize(name)
     @name = name
     @last_changed_time = File.mtime(name)
-    @was_changed = false
   end
 
   def has_changed?
@@ -35,7 +34,7 @@ class BuildMessage
   end
 
   def message
-    successful ? "Build Successful" : @error_items.join('\n')
+    successful ? "Build Successful" : @error_items.join("\r\n")
   end
 end
 
@@ -78,7 +77,10 @@ end
 
 def notify(build_message)
   icon = build_message.successful ? "green" : "red"
-  `build/tools/growl/growlnotify.exe /t:"Build" /i:".\\#{icon}.jpg" "#{build_message.message.gsub("\n","\r\n")}"`
+  args = {:t => "Build",:i => ".\\#{icon}.jpg",:s => "False"}
+  command_line = "build/tools/growl/growlnotify.exe"
+  args.each {|key,value| command_line += " /#{key}:\"#{value}\""}
+  `#{command_line} "#{build_message.message}"`
 end
 
 def monitor
