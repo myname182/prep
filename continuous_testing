@@ -59,8 +59,7 @@ def remove_all_deleted
 end
 
 def changes_have_occured
-  return scan_for_new_files | remove_all_deleted |
-    files_have_changed
+  return scan_for_new_files | remove_all_deleted | files_have_changed
 end
 
 def files_have_changed
