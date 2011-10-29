@@ -52,17 +52,10 @@ def scan_for_new_files
 end
 
 def remove_all_deleted
-  files_were_deleted = false
-  remove = {}
-  @all_files.each do |path,file|
-    if (file.was_deleted?)
-      remove[path] = file if file.was_deleted?
-      files_were_deleted = true
-    end
-  end
-  remove.each do|path,file|
-    @all_files.delete(path)
-  end
+  remaining = @all_files.select{|path,item| ! item.was_deleted?}
+  files_were_deleted = remaining.length != @all_files.length
+  puts "There were #{@all_files.length - remaining.length} files deleted"
+  @all_files = remaining
   files_were_deleted
 end
 
