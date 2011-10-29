@@ -54,7 +54,6 @@ end
 def remove_all_deleted
   remaining = @all_files.select{|path,item| ! item.was_deleted?}
   files_were_deleted = remaining.length != @all_files.length
-  puts "There were #{@all_files.length - remaining.length} files deleted"
   @all_files = remaining
   files_were_deleted
 end
