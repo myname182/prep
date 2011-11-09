@@ -51,10 +51,28 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="build.bat" />
-    <None Include="build\tasks\configuration.rb" />
-    <None Include="build\tasks\git.rb" />
-    <None Include="build\tasks\machine_specs.rb" />
-    <None Include="build\tasks\templates.rb" />
+    <None Include="build\support\001_utils\configatron.rb" />
+    <None Include="build\support\001_utils\file.rb" />
+    <None Include="build\support\001_utils\string.rb" />
+    <None Include="build\support\001_utils\template_file.rb" />
+    <None Include="build\support\001_utils\unique_files.rb" />
+    <None Include="build\support\001_utils\windows\msbuild_runner.rb" />
+    <None Include="build\support\001_utils\windows\sevenzip.rb" />
+    <None Include="build\support\002_configuration\git.rb" />
+    <None Include="build\support\002_configuration\project.rb" />
+    <None Include="build\support\002_configuration\windows\db.rb" />
+    <None Include="build\support\002_configuration\windows\db_dev.rb.customize" />
+    <None Include="build\support\002_configuration\windows\machine_specs.rb" />
+    <None Include="build\support\003_tasks\01_templates.rb" />
+    <None Include="build\support\003_tasks\configuration.rb" />
+    <None Include="build\support\003_tasks\windows\01_templates.rb" />
+    <None Include="build\support\003_tasks\windows\build.rb" />
+    <None Include="build\support\003_tasks\windows\configuration.rb" />
+    <None Include="build\support\003_tasks\windows\db.rb.ignore" />
+    <None Include="build\support\003_tasks\windows\git.rb" />
+    <None Include="build\support\003_tasks\windows\git.rb.erb" />
+    <None Include="build\support\003_tasks\windows\growl.rb" />
+    <None Include="build\support\003_tasks\windows\machine_specs.rb" />
     <None Include="build\tools\Rake\bin\rake" />
     <None Include="build\tools\Rake\lib\ruby\1.8\date.rb" />
     <None Include="build\tools\Rake\lib\ruby\1.8\date\format.rb" />
@@ -151,12 +169,6 @@
     <None Include="build\tools\Rake\lib\ruby\site_ruby\1.8\yamler.rb" />
     <None Include="build\tools\Rake\lib\ruby\site_ruby\1.8\yamler\template.rb" />
     <None Include="build\tools\Rake\lib\ruby\site_ruby\1.8\yamler\yamler.rb" />
-    <None Include="build\utils\configatron.rb" />
-    <None Include="build\utils\file.rb" />
-    <None Include="build\utils\msbuild_runner.rb" />
-    <None Include="build\utils\sevenzip.rb" />
-    <None Include="build\utils\string.rb" />
-    <None Include="build\utils\template_file.rb" />
     <None Include="fetch_latest" />
     <None Include="Gemfile" />
     <None Include="git_utils.rb" />
@@ -216,6 +228,9 @@
     <Content Include="build\tools\Rake\lib\ruby\1.8\i386-mswin32\util.h" />
     <Content Include="build\tools\Rake\lib\ruby\1.8\i386-mswin32\version.h" />
     <Content Include="build\tools\Rake\lib\ruby\1.8\i386-mswin32\win32\win32.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="build\tasks\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
