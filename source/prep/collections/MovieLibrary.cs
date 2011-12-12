@@ -35,7 +35,7 @@ namespace prep.collections
       return all_movies_matching(movie => movie.production_studio == ProductionStudio.Pixar);
     }
 
-    IEnumerable<Movie> all_movies_matching(MovieCondition condition)
+    IEnumerable<Movie> all_movies_matching(Condition<Movie> condition)
     {
       return movies.all_items_matching(condition.Invoke);
     }
