@@ -1,12 +1,14 @@
-﻿using System;
+﻿using prep.collections;
 
 namespace prep.infrastructure.matching
 {
+  public delegate ProductionStudio StudioAccessor(Movie movie);
+
   public class Where<ItemToMatch>
   {
-    public static void has_a(Func<object, object> func)
+    public static StudioAccessor has_a(StudioAccessor accessor)
     {
-      throw new NotImplementedException();
+      return accessor;
     }
   }
 }
