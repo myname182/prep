@@ -27,7 +27,7 @@ namespace prep.infrastructure.matching
 
     public IMatchA<ItemToMatch> equal_to_any(params PropertyType[] values)
     {
-      throw new NotImplementedException();
+       return new AnonymousMatch<ItemToMatch>(x => accessor(x).Equals(values[0])).or(new AnonymousMatch<ItemToMatch>(x => accessor(x).Equals(values[1])));
     }
   }
 }
