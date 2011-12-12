@@ -55,6 +55,7 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="collections\Genre.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="infrastructure\matching\MatchExtensions.cs" />
     <Compile Include="infrastructure\matching\MatchFactory.cs" />
     <Compile Include="infrastructure\matching\NeverMatches.cs" />
+    <Compile Include="infrastructure\matching\NotEqualTo.cs" />
     <Compile Include="infrastructure\matching\OrMatch.cs" />
     <Compile Include="infrastructure\matching\Where.cs" />
   </ItemGroup>

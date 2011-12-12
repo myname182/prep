@@ -24,7 +24,7 @@ namespace prep.infrastructure.matching
 
     public IMatchA<ItemToMatch> not_equal_to(PropertyType value)
     {
-      throw new NotImplementedException();
+        return new NotEqualTo<ItemToMatch>(new AnonymousMatch<ItemToMatch>(x => accessor(x).Equals(value)));
     }
   }
 }
