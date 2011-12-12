@@ -1,4 +1,4 @@
-namespace prep.infrastructure
+namespace prep.infrastructure.matching
 {
   public interface IMatchA<Item>
   {

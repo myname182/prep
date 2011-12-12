@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using prep.infrastructure;
+using prep.infrastructure.matching;
 
 namespace prep.collections
 {
@@ -37,7 +38,7 @@ namespace prep.collections
 
     IEnumerable<Movie> all_movies_matching(Condition<Movie> condition)
     {
-      return movies.all_items_matching(new MatchAAdapter<Movie>(condition.Invoke));
+      return movies.all_items_matching(condition.as_specification());
     }
 
     public IEnumerable<Movie> all_movies_published_by_pixar_or_disney()
