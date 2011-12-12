@@ -82,16 +82,14 @@ namespace prep.specs
         number_of_movies = sut.all_movies().Count();
 
       It should_return_the_number_of_all_movies_in_the_library = () =>
-      {
         number_of_movies.ShouldEqual(2);
-      };
     }
 
     public class when_asked_for_all_of_the_movies : movie_library_concern
     {
       static Movie first_movie;
       static Movie second_movie;
-      static IEnumerable<Movie> all_movies;
+      static IEnumerable<Movie> results;
 
       Establish c = () =>
       {
@@ -102,10 +100,10 @@ namespace prep.specs
       };
 
       Because b = () =>
-        all_movies = sut.all_movies();
+        results = sut.all_movies();
 
       It should_receive_a_set_containing_each_movie_in_the_library = () =>
-        all_movies.ShouldContainOnly(first_movie, second_movie);
+        results.ShouldContainOnly(first_movie, second_movie);
     }
 
     public class when_trying_to_change_the_set_of_movies_returned_by_the_movie_library_to_a_mutable_type :
