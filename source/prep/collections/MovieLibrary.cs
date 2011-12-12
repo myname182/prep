@@ -37,11 +37,15 @@ namespace prep.collections
 
     IEnumerable<Movie> all_movies_matching(MovieCondition condition)
     {
-      return movies.all_items_matching(condition);
+      return movies.all_items_matching(condition.Invoke);
     }
+
     public IEnumerable<Movie> all_movies_published_by_pixar_or_disney()
     {
-      return all_movies_matching(movie => movie.production_studio == ProductionStudio.Pixar || movie.production_studio == ProductionStudio.Disney);
+      return
+        all_movies_matching(
+          movie =>
+            movie.production_studio == ProductionStudio.Pixar || movie.production_studio == ProductionStudio.Disney);
     }
 
     public IEnumerable<Movie> all_kid_movies()
