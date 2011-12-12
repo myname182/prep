@@ -1,6 +1,6 @@
 namespace prep.infrastructure.matching
 {
-  public interface IMatchA<Item>
+  public interface IMatchA<in Item>
   {
     bool matches(Item item);
   }

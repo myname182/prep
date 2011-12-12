@@ -1,4 +1,4 @@
 ﻿namespace prep.infrastructure.matching
 {
-  public delegate bool Condition<Item>(Item item);
+  public delegate bool Condition<in Item>(Item item);
 }

@@ -72,7 +72,6 @@
     <Compile Include="infrastructure\matching\AnonymousMatch.cs" />
     <Compile Include="infrastructure\matching\MatchExtensions.cs" />
     <Compile Include="infrastructure\matching\OrMatch.cs" />
-    <Compile Include="infrastructure\matching\AccessorExtensions.cs" />
     <Compile Include="infrastructure\matching\Where.cs" />
   </ItemGroup>
   <ItemGroup>
