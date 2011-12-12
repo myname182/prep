@@ -65,13 +65,14 @@
     <Compile Include="collections\MovieLibrary.cs" />
     <Compile Include="collections\ProductionStudio.cs" />
     <Compile Include="collections\ReadOnlySetOf.cs" />
+    <Compile Include="infrastructure\matching\Accessor.cs" />
     <Compile Include="infrastructure\matching\Condition.cs" />
     <Compile Include="infrastructure\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\matching\IMatchA.cs" />
     <Compile Include="infrastructure\matching\AnonymousMatch.cs" />
     <Compile Include="infrastructure\matching\MatchExtensions.cs" />
     <Compile Include="infrastructure\matching\OrMatch.cs" />
-    <Compile Include="infrastructure\matching\StudioAccessorExtensions.cs" />
+    <Compile Include="infrastructure\matching\AccessorExtensions.cs" />
     <Compile Include="infrastructure\matching\Where.cs" />
   </ItemGroup>
   <ItemGroup>
