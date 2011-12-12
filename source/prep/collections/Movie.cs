@@ -9,5 +9,11 @@ namespace prep.collections
     public Genre genre { get; set; }
     public int rating { get; set; }
     public DateTime date_published { get; set; }
+    public bool isSimilar(Movie movie)
+    {
+        if (movie.title == this.title)
+            return true;
+        return false;
+    }
   }
 }

@@ -19,7 +19,16 @@ namespace prep.collections
 
     public void add(Movie movie)
     {
-      throw new NotImplementedException();
+     // throw new NotImplementedException();
+        if (!movies.Contains(movie))
+        {
+            foreach (var movie1 in movies)
+            {
+                if (movie1.isSimilar(movie))
+                    return;
+            }
+            movies.Add(movie);
+        }
     }
 
     public IEnumerable<Movie> sort_all_movies_by_title_descending()
@@ -29,12 +38,28 @@ namespace prep.collections
 
     public IEnumerable<Movie> all_movies_published_by_pixar()
     {
-      throw new NotImplementedException();
+      //throw new NotImplementedException();
+        List<Movie> lmovies = new List<Movie>(movies);
+        return lmovies.FindAll(delegate(Movie movie)
+                                   {
+                                       return movie.production_studio == ProductionStudio.Pixar;
+                                   }
+            );
+
     }
 
     public IEnumerable<Movie> all_movies_published_by_pixar_or_disney()
     {
-      throw new NotImplementedException();
+      //throw new NotImplementedException();
+        List<Movie> lmovies = new List<Movie>(movies);
+        return lmovies.FindAll(delegate(Movie movie)
+                                   {
+                                       if (movie.production_studio == ProductionStudio.Pixar || movie.production_studio == ProductionStudio.Disney)
+                                           return true;
+                                       else
+                                           return false;
+                                   }
+            );
     }
 
     public IEnumerable<Movie> sort_all_movies_by_title_ascending()
