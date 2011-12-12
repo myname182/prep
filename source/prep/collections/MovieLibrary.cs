@@ -37,7 +37,7 @@ namespace prep.collections
 
     IEnumerable<Movie> all_movies_matching(Condition<Movie> condition)
     {
-      return movies.all_items_matching(condition.Invoke);
+      return movies.all_items_matching(new MatchAAdapter<Movie>(condition.Invoke));
     }
 
     public IEnumerable<Movie> all_movies_published_by_pixar_or_disney()
