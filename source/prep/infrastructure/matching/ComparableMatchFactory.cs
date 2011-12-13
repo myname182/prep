@@ -18,7 +18,7 @@ namespace prep.infrastructure.matching
 
     public IMatchA<ItemToMatch> between(PropertyType start, PropertyType end)
     {
-      throw new NotImplementedException();
+        return new AnonymousMatch<ItemToMatch>(x => accessor(x).CompareTo(start) > 0 && accessor(x).CompareTo(end) < 0);
     }
   }
 }
