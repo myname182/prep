@@ -1,23 +1,25 @@
 ﻿namespace prep.infrastructure.matching
 {
-  public class MatchFilteringExtensionPoint<ItemToMatch,PropertyType>
+  public class MatchFilteringExtensionPoint<ItemToMatch, PropertyType> : IProvideAccessToFilteringExtensions<ItemToMatch, PropertyType>
   {
-    public bool negate { get; private set; }
-    public Accessor<ItemToMatch, PropertyType> accessor { get; private set; }
+    Accessor<ItemToMatch, PropertyType> accessor;
 
-    public MatchFilteringExtensionPoint<ItemToMatch,PropertyType> not
+    public IProvideAccessToFilteringExtensions<ItemToMatch, PropertyType> not
     {
       get
       {
-        negate = true;
-          return this;
+        return new NegatingMatchFilteringExtensionPoint<ItemToMatch, PropertyType>(this);
       }
     }
-
 
     public MatchFilteringExtensionPoint(Accessor<ItemToMatch, PropertyType> accessor)
     {
       this.accessor = accessor;
+    }
+
+    public IMatchA<ItemToMatch> create_criteria_using(IMatchA<PropertyType> value_criteria)
+    {
+      return new PropertyMatch<ItemToMatch, PropertyType>(accessor, value_criteria);
     }
   }
 }

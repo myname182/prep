@@ -71,10 +71,12 @@
     <Compile Include="infrastructure\matching\IMatchA.cs" />
     <Compile Include="infrastructure\matching\AnonymousMatch.cs" />
     <Compile Include="infrastructure\matching\FallsInRange.cs" />
+    <Compile Include="infrastructure\matching\IProvideAccessToFilteringExtensions.cs" />
     <Compile Include="infrastructure\matching\IsEqualToAny.cs" />
     <Compile Include="infrastructure\matching\MatchExtensions.cs" />
     <Compile Include="infrastructure\matching\MatchFilteringExtensions.cs" />
     <Compile Include="infrastructure\matching\MatchFilteringExtensionPoint.cs" />
+    <Compile Include="infrastructure\matching\NegatingMatchFilteringExtensionPoint.cs" />
     <Compile Include="infrastructure\matching\NeverMatches.cs" />
     <Compile Include="infrastructure\matching\NegatingMatch.cs" />
     <Compile Include="infrastructure\matching\OrMatch.cs" />
