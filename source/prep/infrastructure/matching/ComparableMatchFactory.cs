@@ -1,4 +1,5 @@
 ﻿using System;
+using prep.infrastructure.ranges;
 
 namespace prep.infrastructure.matching
 {
@@ -34,16 +35,13 @@ namespace prep.infrastructure.matching
 
     public IMatchA<ItemToMatch> greater_than(PropertyType value)
     {
-      //create a dsl that can be used to create ranges 
-      //ex : ARange.starting_at(1).non_inclusive()
-      //ex : 1.non_inclusive()
-      //ex : ARange.starting_at(1).inclusive().up_to(3).inclusive()
-      return create_from(new FallsInRange<PropertyType>(i_will_use_the_dsl_here_to_create_the_range));
+      return create_from(new FallsInRange<PropertyType>(new GreaterThanValueRange<PropertyType>(value)));
     }
 
     public IMatchA<ItemToMatch> between(PropertyType start, PropertyType end)
     {
-      return create_from(new FallsInRange<PropertyType>(i_will_use_the_dsl_here_to_create_the_range));
+      return create_from(new FallsInRange<PropertyType>(new InclusiveRange<PropertyType>(start, end)));
+
     }
   }
 }

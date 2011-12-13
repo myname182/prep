@@ -7,10 +7,10 @@ namespace prep.infrastructure.ranges
     T end;
     T start;
 
-    public InclusiveRange(T end, T start)
+    public InclusiveRange(T start,T end)
     {
-      this.end = end;
       this.start = start;
+      this.end = end;
     }
 
     public bool contains(T value)

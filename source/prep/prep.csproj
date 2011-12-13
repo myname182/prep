@@ -81,6 +81,7 @@
     <Compile Include="infrastructure\matching\NegatingMatch.cs" />
     <Compile Include="infrastructure\matching\OrMatch.cs" />
     <Compile Include="infrastructure\matching\PropertyMatch.cs" />
+    <Compile Include="infrastructure\ranges\GreaterThanValueRange.cs" />
     <Compile Include="infrastructure\ranges\InclusiveRange.cs" />
     <Compile Include="infrastructure\ranges\Range.cs" />
     <Compile Include="infrastructure\matching\Where.cs" />
