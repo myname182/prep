@@ -12,7 +12,7 @@ namespace prep.infrastructure.matching
 
     public static ComparableMatchFactory<ItemToMatch,PropertyType> has_an<PropertyType>(Accessor<ItemToMatch,PropertyType> accessor) where PropertyType : IComparable<PropertyType>
     {
-      return new ComparableMatchFactory<ItemToMatch, PropertyType>(accessor);
+      return new ComparableMatchFactory<ItemToMatch, PropertyType>(accessor,has_a(accessor));
     }
   }
 }

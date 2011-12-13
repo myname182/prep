@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace prep.infrastructure.matching
 {
-  public class MatchFactory<ItemToMatch, PropertyType>
+  public class MatchFactory<ItemToMatch, PropertyType> : ICreateMatchers<ItemToMatch, PropertyType>
   {
     Accessor<ItemToMatch, PropertyType> accessor;
 
@@ -16,9 +16,14 @@ namespace prep.infrastructure.matching
       return equal_to_any(value);
     }
 
+    public IMatchA<ItemToMatch> create_from(Condition<ItemToMatch> condition)
+    {
+      return new AnonymousMatch<ItemToMatch>(condition);
+    }
+
     public IMatchA<ItemToMatch> equal_to_any(params PropertyType[] values)
     {
-        return  AnonymousMatchFactory<ItemToMatch>.CreateMatch(x => new List<PropertyType>(values).Contains(accessor(x)));
+        return  create_from(x => new List<PropertyType>(values).Contains(accessor(x)));
     }
 
     public IMatchA<ItemToMatch> not_equal_to(PropertyType value)
