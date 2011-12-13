@@ -13,7 +13,12 @@ namespace prep.infrastructure.matching
 
     public IMatchA<ItemToMatch> greater_than(PropertyType value)
     {
-        return new AnonymousMatch<ItemToMatch>(x => accessor(x).CompareTo(value) > 0);
+      return new AnonymousMatch<ItemToMatch>(x => accessor(x).CompareTo(value) > 0);
+    }
+
+    public IMatchA<ItemToMatch> between(PropertyType start, PropertyType end)
+    {
+      throw new NotImplementedException();
     }
   }
 }
