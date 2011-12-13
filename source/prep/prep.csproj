@@ -73,11 +73,16 @@
     <Compile Include="infrastructure\matching\IMatchA.cs" />
     <Compile Include="infrastructure\matching\AnonymousMatch.cs" />
     <Compile Include="infrastructure\matching\ICreateMatchers.cs" />
+    <Compile Include="infrastructure\matching\FallsInRange.cs" />
+    <Compile Include="infrastructure\matching\IsEqualToAny.cs" />
     <Compile Include="infrastructure\matching\MatchExtensions.cs" />
     <Compile Include="infrastructure\matching\MatchFactory.cs" />
     <Compile Include="infrastructure\matching\NeverMatches.cs" />
     <Compile Include="infrastructure\matching\NegatingMatch.cs" />
     <Compile Include="infrastructure\matching\OrMatch.cs" />
+    <Compile Include="infrastructure\matching\PropertyMatch.cs" />
+    <Compile Include="infrastructure\ranges\InclusiveRange.cs" />
+    <Compile Include="infrastructure\ranges\Range.cs" />
     <Compile Include="infrastructure\matching\Where.cs" />
   </ItemGroup>
   <ItemGroup>

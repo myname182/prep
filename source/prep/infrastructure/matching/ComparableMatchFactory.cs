@@ -5,13 +5,10 @@ namespace prep.infrastructure.matching
   public class ComparableMatchFactory<ItemToMatch, PropertyType> : ICreateMatchers<ItemToMatch, PropertyType>
     where PropertyType : IComparable<PropertyType>
   {
-    Accessor<ItemToMatch, PropertyType> accessor;
     ICreateMatchers<ItemToMatch, PropertyType> original;
 
-    public ComparableMatchFactory(Accessor<ItemToMatch, PropertyType> accessor,
-                                  ICreateMatchers<ItemToMatch, PropertyType> original)
+    public ComparableMatchFactory(ICreateMatchers<ItemToMatch, PropertyType> original)
     {
-      this.accessor = accessor;
       this.original = original;
     }
 
@@ -30,21 +27,23 @@ namespace prep.infrastructure.matching
       return original.not_equal_to(value);
     }
 
-    public IMatchA<ItemToMatch> create_from(Condition<ItemToMatch> condition)
+    public IMatchA<ItemToMatch> create_from(IMatchA<PropertyType> value_criteria)
     {
-      return original.create_from(condition);
+      return original.create_from(value_criteria);
     }
 
     public IMatchA<ItemToMatch> greater_than(PropertyType value)
     {
-      return create_from(x => accessor(x).CompareTo(value) > 0);
+      //create a dsl that can be used to create ranges 
+      //ex : ARange.starting_at(1).non_inclusive()
+      //ex : 1.non_inclusive()
+      //ex : ARange.starting_at(1).inclusive().up_to(3).inclusive()
+      return create_from(new FallsInRange<PropertyType>(i_will_use_the_dsl_here_to_create_the_range));
     }
 
     public IMatchA<ItemToMatch> between(PropertyType start, PropertyType end)
     {
-      return
-        create_from(
-          x => accessor(x).CompareTo(start) >= 0 && accessor(x).CompareTo(end) <= 0);
+      return create_from(new FallsInRange<PropertyType>(i_will_use_the_dsl_here_to_create_the_range));
     }
   }
 }

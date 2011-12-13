@@ -5,6 +5,6 @@ namespace prep.infrastructure.matching
     IMatchA<ItemToMatch> equal_to(PropertyType value);
     IMatchA<ItemToMatch> equal_to_any(params PropertyType[] values);
     IMatchA<ItemToMatch> not_equal_to(PropertyType value);
-    IMatchA<ItemToMatch> create_from(Condition<ItemToMatch> condition);
+    IMatchA<ItemToMatch> create_from(IMatchA<PropertyType> value_criteria);
   }
 }
