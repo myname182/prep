@@ -1,10 +1,10 @@
 ﻿namespace prep.infrastructure.matching
 {
-    public class NotEqualTo<Item> : IMatchA<Item>
+    public class NegatingMatch<Item> : IMatchA<Item>
     {
         IMatchA<Item> item;
 
-        public NotEqualTo(IMatchA<Item> item)
+        public NegatingMatch(IMatchA<Item> item)
         {
             this.item = item;
         }

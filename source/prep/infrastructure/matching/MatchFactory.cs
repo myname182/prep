@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace prep.infrastructure.matching
@@ -14,7 +13,7 @@ namespace prep.infrastructure.matching
 
     public IMatchA<ItemToMatch> equal_to(PropertyType value)
     {
-      return new AnonymousMatch<ItemToMatch>(x => accessor(x).Equals(value));
+      return equal_to_any(value);
     }
 
     public IMatchA<ItemToMatch> equal_to_any(params PropertyType[] values)
@@ -24,7 +23,7 @@ namespace prep.infrastructure.matching
 
     public IMatchA<ItemToMatch> not_equal_to(PropertyType value)
     {
-        return new NotEqualTo<ItemToMatch>(new AnonymousMatch<ItemToMatch>(x => accessor(x).Equals(value)));
+      return equal_to(value).not();
     }
   }
 }

@@ -74,7 +74,7 @@
     <Compile Include="infrastructure\matching\MatchExtensions.cs" />
     <Compile Include="infrastructure\matching\MatchFactory.cs" />
     <Compile Include="infrastructure\matching\NeverMatches.cs" />
-    <Compile Include="infrastructure\matching\NotEqualTo.cs" />
+    <Compile Include="infrastructure\matching\NegatingMatch.cs" />
     <Compile Include="infrastructure\matching\OrMatch.cs" />
     <Compile Include="infrastructure\matching\Where.cs" />
   </ItemGroup>
