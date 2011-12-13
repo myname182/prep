@@ -10,7 +10,7 @@
       get
       {
         negate = true;
-        return this;
+          return this;
       }
     }
 
