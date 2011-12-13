@@ -20,11 +20,6 @@ namespace prep.infrastructure.matching
       return create_from(extension_point,new IsEqualToAny<PropertyType>(values));
     }
 
-    public static IMatchA<ItemToMatch> not_equal_to<ItemToMatch,PropertyType>(this MatchFilteringExtensionPoint<ItemToMatch,PropertyType> extension_point,PropertyType value)
-    {
-      return equal_to(extension_point,value).not();
-    }
-
     public static IMatchA<ItemToMatch> greater_than<ItemToMatch,PropertyType>(this MatchFilteringExtensionPoint<ItemToMatch,PropertyType> extension_point,PropertyType value) where PropertyType : IComparable<PropertyType>
     {
       return create_from(extension_point,new FallsInRange<PropertyType>(new GreaterThanValueRange<PropertyType>(value)));
