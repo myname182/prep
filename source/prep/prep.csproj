@@ -67,6 +67,7 @@
     <Compile Include="collections\ProductionStudio.cs" />
     <Compile Include="collections\ReadOnlySetOf.cs" />
     <Compile Include="infrastructure\matching\Accessor.cs" />
+    <Compile Include="infrastructure\matching\AnonymousMatchFactory.cs" />
     <Compile Include="infrastructure\matching\ComparableMatchFactory.cs" />
     <Compile Include="infrastructure\matching\Condition.cs" />
     <Compile Include="infrastructure\EnumerableExtensions.cs" />
