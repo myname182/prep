@@ -69,6 +69,7 @@
     <Compile Include="infrastructure\matching\Accessor.cs" />
     <Compile Include="infrastructure\matching\Condition.cs" />
     <Compile Include="infrastructure\EnumerableExtensions.cs" />
+    <Compile Include="infrastructure\matching\DateMatchFilteringExtensions.cs" />
     <Compile Include="infrastructure\matching\IMatchA.cs" />
     <Compile Include="infrastructure\matching\AnonymousMatch.cs" />
     <Compile Include="infrastructure\matching\FallsInRange.cs" />
