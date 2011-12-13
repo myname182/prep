@@ -11,10 +11,5 @@
     {
       return new OrMatch<Item>(left, right);
     }
-
-    public static IMatchA<Item> as_specification<Item>(this Condition<Item> condition)
-    {
-      return new AnonymousMatch<Item>(condition);
-    }
   }
 }
